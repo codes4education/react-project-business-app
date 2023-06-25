@@ -1,0 +1,174 @@
+/* Home CSS */
+#home{
+    position:relative;
+    overflow: hidden;
+    min-height: calc(100vh - 84px);
+    padding:8rem 0 0;
+
+    @media (max-width:767px){
+        padding:3rem 0 0;
+    }
+
+    .banner_image{
+        position: absolute;
+        overflow: hidden;
+        background: url('../../assets/banner/banner.png') no-repeat center center;
+        background-size:cover;
+        top:0;
+        z-index:1;
+        width:100%;
+        height:100%;
+        min-height: calc(100vh - 84px);
+        transform:scale(1.1);
+        animation: wave 3s linear infinite;
+
+        &:before{
+            content:'';
+            position: absolute;
+            top:0;
+            min-height: 100%;
+            left:0;
+            right:0;
+            z-index:2;
+            background:var(--dark-layer-color);
+        }
+    }
+    .banner_outer{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        position:relative;
+        z-index:3;
+
+        @media (max-width:992px){
+            flex-direction: column-reverse;
+        }
+
+        .col{
+            width:calc(100% / 2 - 15px);
+            height:auto;
+            position:relative;
+
+            @media (max-width:992px){
+                width:fit-content;
+                padding:2rem;
+            }
+            @media (max-width:767px){
+                padding:1.5rem;
+            }
+        }
+        .title{
+            width:80%;
+            font-size:4rem;
+            line-height: 5rem;
+            font-weight: 200;
+            margin-bottom:1rem;
+            text-transform: uppercase;
+
+            & span{
+                font-weight: 800;
+            }
+            @media (max-width:992px){
+                width:100%;
+                margin-top:10rem;
+                text-align: center;
+                line-height: 4rem;
+            }
+            @media (max-width:767px){
+                width:100%;
+                font-size: 2.5rem;
+            }
+            
+        }
+        & p{
+            width:80%; 
+            padding:0;
+            font-size:1.143rem;
+            line-height: 2rem;
+            color:var(--font-color);
+
+            @media (max-width:992px){
+                width:100%;
+                text-align: center;
+            }
+        }
+        .sub_banner_image{
+            background-color: var(--secondary-color);
+            border-radius: 0 3rem;
+
+            & img{
+                border-radius: 0 3.571rem;
+                margin-top:-2rem;
+                margin-left:-2rem;
+                max-width: 100%;
+            }
+        }
+        .banner_style_1{
+            display:flex;
+            align-items:center;
+            box-shadow: 0 1rem 3rem rgb(0 0 0 / 12%);
+            background-color: var(--bg-color);
+            position: absolute;
+            right:32px;
+            bottom:-28px;
+            padding:15px 20px;
+            border-radius: 8px;
+            width:max-content;
+            height:max-content;
+
+            & h4{
+                margin:0;
+                font-size:1.286rem;
+            }
+
+            & svg{
+                line-height: 40px;
+                margin-right: 15px;
+                text-align: center;
+                width:20px;
+                height:20px;
+                border-radius: 50%;
+
+                & path{
+                    fill:var(--green-color);
+                }
+            }
+        }
+        .banner_style_2{
+            right:0;
+            left:0;
+            bottom:-100px;
+
+            & svg{
+                & path{
+                    fill:var(--primary-color);
+                }
+            }
+        }
+        .banner_style_3{
+            right:0;
+            left:-119px;
+            bottom:0px;
+            top:26px;
+            & svg{
+                & path{
+                    fill:var(--blue-color);
+                }
+            }
+
+            @media (max-width:992px){
+                left:-20px;
+            }
+        }
+    }
+}
+
+@keyframes wave {
+    0%,
+    100%{
+        transform: translate(0px, 0px);
+    }
+    50%{
+        transform: translate(-10px, -10px);
+    }
+}

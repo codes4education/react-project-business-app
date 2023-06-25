@@ -1,0 +1,123 @@
+/* Navbar CSS */
+#site_header{
+    position:relative;
+    z-index:5;
+
+    &.sticky{
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index:100;
+        width:100%;
+        height:auto;
+        background-color:var(--bg-color);
+        padding:0.500rem 0 1rem;
+        transform:translateY(0px);
+        transition:all 0.3s ease-in-out;
+        animation:navbar 0.3s linear forwards;
+    }
+
+    background-color:var(--bg-color);
+    padding:0.500rem 0 1rem;
+    transform:translateY(0px);
+    transition: 0.3s all ease-in-out;
+
+    .navbar{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+
+        .navbar_brand img{
+            max-width: 80%;
+        }
+
+        .navbar_toggler{
+            display:none;
+
+            & svg{
+                line-height: 2.8571rem;
+                margin-right:1.0714rem;
+                text-align: center;
+                width:1.4286rem;
+                height:1.4286rem;
+                border-radius: 50%;
+
+                & path{
+                    fill:var(--white-color);
+                }
+            }
+
+            @media (max-width: 992px){
+                display:block;
+            }
+        }
+        .menu_items{
+            @media (max-width: 992px){
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                background:var(--bg-color);
+                z-index:9999;
+                transform:translateX(-250px);
+                transition:all 0.3s ease-in-out;
+
+                &.active{
+                    max-width:250px;
+                    min-width: 250px;
+                    padding:2rem;
+                    box-sizing: border-box;
+                    transform:translateX(0px);
+                }
+            }
+
+
+
+            & ul{
+                margin:0;
+                padding:0;
+
+                & li{
+                    list-style: none;
+                    display:inline-block;
+                    position:relative;
+                    padding:0 1rem;
+
+                    @media (max-width:992px){
+                        display:block;
+                        border-bottom:1px solid rgba(255,255,255,0.2);
+                    }
+
+                    & a{
+                        padding:0.675rem 0;
+                        font-size:1.1rem;
+                        font-weight: 500;
+                        color:var(--white-color);
+                        cursor: pointer;
+
+                        @media (max-width:992px){
+                            padding:1rem 0;
+                            display: block;
+                        }
+
+                        &.active,
+                        &:hover,
+                        &:focus{
+                            color:var(--primary-nav-color);
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+
+@keyframes navbar {
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-100px);
+    }
+}

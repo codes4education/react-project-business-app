@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+/* Google Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* Global Veriables */
+:root {
+  /* Background Color */
+  --primary-color: #990033;
+  --secondary-color: #ffc2b4;
+  --primary-nav-color: #e21056;
+  --primary-bg: rgb(153 0 51 / 14%);
+  --font-color: #b7b7b7;
+  --bg-color: #171717;
+  --bg-dark-color: #0c0b0b;
+  --white-color: #fdfffc;
+  --green-color: #0abf53; 
+  --green-color-bg: rgb(10 191 83 / 17%);
+  --blue-color: #6168ff; 
+  --blue-color-bg: rgb(97 104 255 / 9%);
+  --border-color-light: rgba(255, 255, 255, 0.2);  
+  --box-shadow: 0 1rem 3rem rgb(0 0 0 / 12%);
+  --dark-layer-color: linear-gradient(to top, rgb(21 21 21 / 67%), rgb(23 23 23 / 17%));
+
+  /* Font Family */
+  --primary-font: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  font-size: 14px;
+  font-family: var(--primary-font);
+  background-color: var(--bg-color);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: .375rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+/* Pre-defined Classes CSS */
+a {
+  text-decoration: none;
+}
+
+.container-fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.container {
+  width: auto;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+
+.btn_wrapper {
+  margin-top: 5rem; 
+
+  @media (max-width:992px) {
+      width: 100%;
+      text-align: center;
+      display:block; 
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  @media (max-width:767px){
+      margin-bottom:3rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+  .btn {
+      padding: 0.857rem 2.571rem;
+      font-size: 1.143rem;
+      color: var(--white-color);
+      border-radius: 2.143rem;
+      font-weight: 600;
+      box-shadow: 0 0.5rem 1rem rgb(16, 16, 16);
+      outline: 2px solid var(--primary-color);
+      outline-offset: 0px;
+      border: none;
+      cursor: pointer;
+      background: var(--primary-color);
+      transition: all .3s ease-in-out;
+
+      &:hover {
+          outline-offset: 10px;
+      }
+  } 
+}   
+
+h1 {
+  font-size: 3.875rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: var(--white-color);
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 2.875rem;
+  color: var(--white-color);
+}
+
+h3 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--white-color);
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  color: var(--white-color);
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--primary-text);
+  margin-bottom: .9375rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: .875rem;
+  color: var(--white-color);
+  margin-bottom: .9375rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  line-height: 1.625rem;
 }
