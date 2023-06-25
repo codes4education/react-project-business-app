@@ -1,0 +1,97 @@
+/* Contact CSS */
+#contact{
+    padding:3rem 0;
+
+    .contact_wrapper{
+        display:flex;
+        justify-content:space-between;
+        margin-top:4rem;
+        flex-wrap: wrap;
+
+        @media (max-width:992px){
+            justify-content: center;
+        }
+        @media (max-width:767px){
+            flex-direction: column;
+        }
+
+        .contact_col{
+            width:calc(100% / 2 - 1rem);
+            padding:1rem;
+            box-sizing:border-box;
+
+            @media (max-width:992px){
+                width:50%
+            }
+            @media (max-width:767px){ 
+                width:100%;
+            }
+        }
+        .input_wrapper{
+            width:100%;
+            display: flex;
+
+            .form-control{
+                width:100%;
+                background-color:transparent;
+                border:.0714rem solid var(--white-color);
+                color:var(--white-color);
+                font-size:1.0714rem;
+                font-weight: 400;
+                padding:.7143rem 1.4286rem;
+                border-radius: .5714rem;
+                margin-bottom:3rem;
+            }
+
+            & textarea{
+                width:100%;
+                display:block;
+                background-color:transparent;
+                border:.0714rem solid var(--white-color);
+                color:var(--white-color);
+                font-size:1.0714rem;
+                font-weight: 400;
+                padding:.7143rem 1.4286rem;
+                border-radius: .5714rem; 
+                min-height: 7.1429rem;
+            }
+
+            .form-control:hover,
+            & textarea:hover,
+            .form-control:focus,
+            & textarea:focus{
+                border-color:var(--primary-color);
+                color:var(--white-color);
+            }
+        }
+        .btn_wrapper{
+            margin-top:2rem;
+        }
+        .contact_image{
+            position:relative;
+
+            &:after{
+                overflow: hidden;
+                content:url('../../assets/about/layer_2.png');
+                z-index:1;
+                position:absolute;
+                top:-70px;
+                right:-20px;
+                max-width: 100%;
+            }
+
+            @media (max-width: 1024px){
+                &:after{
+                    right:0;
+                }
+            } 
+
+            & img{
+                border-radius: 2.1429rem;
+                position:relative;
+                z-index:2;
+                max-width: 85%;
+            }
+        }
+    }
+}
